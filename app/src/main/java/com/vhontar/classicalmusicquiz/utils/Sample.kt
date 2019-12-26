@@ -147,7 +147,7 @@ class Sample private constructor(
                 DefaultDataSource(context, userAgent, false)
             val dataSpec = DataSpec(Uri.parse(uri))
             val inputStream: InputStream = DataSourceInputStream(dataSource, dataSpec)
-            var reader: JsonReader? = null
+            val reader: JsonReader?
             reader = try {
                 JsonReader(InputStreamReader(inputStream, "UTF-8"))
             } finally {
